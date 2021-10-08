@@ -11,7 +11,7 @@ class CreateFreightsTable extends Migration
     {
         Schema::create('freights', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('board');
+            $table->string('plate');
             $table->string('vehicle_owner');
             $table->string('cost_of_freight');
             $table->date('start_date');
