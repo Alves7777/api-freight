@@ -22,11 +22,17 @@ class FreightService
 
     public function create(array $property)
     {
+        $property['start_date'] = Carbon::createFromFormat('d/m/Y', $property['start_date'])->format('Y-m-d');
+        $property['end_date'] = Carbon::createFromFormat('d/m/Y', $property['end_date'])->format('Y-m-d');
+
         return $this->freightRepository->create($property);
     }
 
     public function update(string $id, array $property)
     {
+        $property['start_date'] = Carbon::createFromFormat('d/m/Y', $property['start_date'])->format('Y-m-d');
+        $property['end_date'] = Carbon::createFromFormat('d/m/Y', $property['end_date'])->format('Y-m-d');
+
         return $this->freightRepository->update($id, $property);
     }
 

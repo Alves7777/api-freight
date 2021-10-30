@@ -14,8 +14,8 @@ class FreightRequest extends FormRequest
             'plate' => ['required', 'string', 'max:7'],
             'vehicle_owner' => ['required', 'string', 'max:255'],
             'cost_of_freight' => ['required', 'numeric'],
-            'start_date' => 'required|date|after:yesterday',
-            'end_date' => 'required|date|after:today',
+            'start_date' => 'required',//|date|after:yesterd',
+            'end_date' => 'required',//|date|after:today',
             'status'=> ['required', 'string', Rule::in(['started', 'in_transit', 'concluded'])]
         ];
 
